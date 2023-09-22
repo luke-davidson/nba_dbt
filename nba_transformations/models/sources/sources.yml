@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: nba_stats
+    database: nba_analytics
+    schema: raw
+    tables: 
+      - name: nba_10_11_raw
+        description: "Stats from 2010-2011 season + 2011 playoffs"
+      - name: nba_11_12_raw
+        description: "Stats from 2011-2012 season + 2012 playoffs"
+      - name: nba_12_13_raw
+        description: "Stats from 2012-2013 season + 2013 playoffs"
+      - name: nba_13_14_raw
+        description: "Stats from 2013-2014 season + 2014 playoffs"
+      - name: nba_14_15_raw
+        description: "Stats from 2014-2015 season + 2015 playoffs"
+
+  - name: nba_franchises
+    database: nba_analytics
+    schema: seeds
+    tables:
+      - name: nba_franchises_years_active
+        description: "Table holding all franchises name history with years active"
+      - name: nba_teams
+        description: "Given table with the team name, city, and abbreviation"
