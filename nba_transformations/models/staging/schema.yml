@@ -7,61 +7,6 @@ sources:
     tables: 
       - name: nba_10_11_raw
         description: "Stats from 2010-2011 season + 2011 playoffs"
-        columns:
-          - name: data_set
-            description: "Essentially defining whether it was a regular season or playoff game"
-            tests:
-              - accepted_values:
-                  values: ['2010-2011 Regular Season', '2011 Playoffs']
-          - name: game_date
-            description: "Day of game in YYYY-MM-DD format"
-          - name: player_full_name
-            description: "Full name of player"
-          - name: pos
-            description: "Position of player"
-          - name: player_team
-            description: "Player's team"
-          - name: opposing_team
-            description: "Name of team player played against"
-          - name: game_loc
-            description: "Home or away game, represented by R=Road, H=Home"
-            tests:
-              - accepted_values:
-                  values: ['R', 'H']
-          - name: mins
-            description: "Number of minutes player played in the game"
-            tests:
-              - gen_test_non_neg
-          - name: fg
-            description: "Number of field goals made by player in the game"
-          - name: fga
-            description: "Number of field goals attempted by player in the game"
-          - name: _3p
-            description: "Number of 3s made by player in the game"
-          - name: _3pa
-            description: "Number of 3s attempted by player in the game"
-          - name: ft
-            description: "Number of free throws made by player in the game"
-          - name: fta
-            description: "Number of free throws attempted by player in the game"
-          - name: o_r
-            description: "Number of offensive rebounds the player got in the game"
-          - name: d_r
-            description: "Number of defensive rebounds the player got in the game"
-          - name: r
-            description: "Number of total rebounds the player got in the game"
-          - name: a
-            description: "Number of total assists the player had in the game"
-          - name: pf
-            description: "Number of personal fouls the player got in the game"
-          - name: stl
-            description: "Number of steals the player got in the game"
-          - name: t_o
-            description: "Number of turnovers the player had in the game"
-          - name: bl
-            description: "Number of blocks the player had in the game"
-          - name: pts
-            description: "Number of points the player had in the game"
       - name: nba_11_12_raw
         description: "Stats from 2011-2012 season + 2012 playoffs"
       - name: nba_12_13_raw
@@ -71,11 +16,91 @@ sources:
       - name: nba_14_15_raw
         description: "Stats from 2014-2015 season + 2015 playoffs"
 
-  # - name: nba_franchises
-  #   database: nba_analytics
-  #   schema: seeds
-  #   tables:
-  #     - name: nba_franchises_years_active
-  #       description: "Table holding all franchises name history with years active"
-  #     - name: nba_teams
-  #       description: "Given table with the team name, city, and abbreviation"
+models:
+  - name: stg_union_all_data
+    description: "All 2010-2015 data unioned together in one table"
+    columns:
+      - name: data_set
+        description: "Essentially defining whether it was a regular season or playoff game"
+        tests:
+          - accepted_values:
+              values: ['2010-2011 Regular Season', '2011 Playoffs', '2011-2012 Regular Season', '2012 Playoffs', '2012-2013 Regular Season', '2013 Playoffs', '2013-2014 Regular Season', '2014 Playoffs', '2014-2015 Regular Season', '2015 Playoffs']
+      - name: game_date
+        description: "Day of game in YYYY-MM-DD format"
+      - name: player_full_name
+        description: "Full name of player"
+      - name: pos
+        description: "Position of player"
+      - name: player_team
+        description: "Player's team"
+      - name: opposing_team
+        description: "Name of team player played against"
+      - name: game_loc
+        description: "Home or away game, represented by R=Road, H=Home"
+        tests:
+          - accepted_values:
+              values: ['R', 'H']
+      - name: mins
+        description: "Number of minutes player played in the game"
+        tests:
+          - gen_test_non_neg
+      - name: fg
+        description: "Number of field goals made by player in the game"
+        tests:
+          - gen_test_non_neg
+      - name: fga
+        description: "Number of field goals attempted by player in the game"
+        tests:
+          - gen_test_non_neg
+      - name: _3p
+        description: "Number of 3s made by player in the game"
+        tests:
+          - gen_test_non_neg
+      - name: _3pa
+        description: "Number of 3s attempted by player in the game"
+        tests:
+          - gen_test_non_neg
+      - name: ft
+        description: "Number of free throws made by player in the game"
+        tests:
+          - gen_test_non_neg
+      - name: fta
+        description: "Number of free throws attempted by player in the game"
+        tests:
+          - gen_test_non_neg
+      - name: o_r
+        description: "Number of offensive rebounds the player got in the game"
+        tests:
+          - gen_test_non_neg
+      - name: d_r
+        description: "Number of defensive rebounds the player got in the game"
+        tests:
+          - gen_test_non_neg
+      - name: r
+        description: "Number of total rebounds the player got in the game"
+        tests:
+          - gen_test_non_neg
+      - name: a
+        description: "Number of total assists the player had in the game"
+        tests:
+          - gen_test_non_neg
+      - name: pf
+        description: "Number of personal fouls the player got in the game"
+        tests:
+          - gen_test_non_neg
+      - name: stl
+        description: "Number of steals the player got in the game"
+        tests:
+          - gen_test_non_neg
+      - name: t_o
+        description: "Number of turnovers the player had in the game"
+        tests:
+          - gen_test_non_neg
+      - name: bl
+        description: "Number of blocks the player had in the game"
+        tests:
+          - gen_test_non_neg
+      - name: pts
+        description: "Number of points the player had in the game"
+        tests:
+          - gen_test_non_neg
