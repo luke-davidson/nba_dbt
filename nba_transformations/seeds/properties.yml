@@ -1,0 +1,7 @@
+version: 2
+
+seeds:
+  - name: seed_nba_franchises_years_active
+    description: "Table holding all franchises name history with years active"
+  - name: seed_nba_teams
+    description: "Given table with the team name, city, and abbreviation"

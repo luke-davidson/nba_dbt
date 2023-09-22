@@ -71,11 +71,11 @@ sources:
       - name: nba_14_15_raw
         description: "Stats from 2014-2015 season + 2015 playoffs"
 
-  - name: nba_franchises
-    database: nba_analytics
-    schema: seeds
-    tables:
-      - name: nba_franchises_years_active
-        description: "Table holding all franchises name history with years active"
-      - name: nba_teams
-        description: "Given table with the team name, city, and abbreviation"
+  # - name: nba_franchises
+  #   database: nba_analytics
+  #   schema: seeds
+  #   tables:
+  #     - name: nba_franchises_years_active
+  #       description: "Table holding all franchises name history with years active"
+  #     - name: nba_teams
+  #       description: "Given table with the team name, city, and abbreviation"
