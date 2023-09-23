@@ -3,5 +3,21 @@ version: 2
 seeds:
   - name: seed_nba_franchises_years_active
     description: "Table holding all franchises name history with years active"
+    columns:
+      - name: franchise_name
+        description: "Name of franchise, including city and team name"
+      - name: start_year
+        description: "Year the franchise name became active"
+      - name: end_year
+        description: "Year the franchise stopped being active"
+      - name: active
+        description: "Representing if the franchise is currently active. Active = Y, not active = N"
   - name: seed_nba_teams
     description: "Given table with the team name, city, and abbreviation"
+    columns:
+      - name: franchise_name
+        description: "Name of franchise, including city and team name"
+      - name: city
+        description: "City of franchise"
+      - name: abbrev
+        description: "Three letter abbreviation of the city"
