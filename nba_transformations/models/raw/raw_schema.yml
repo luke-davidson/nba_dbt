@@ -25,6 +25,11 @@ models:
         tests:
           - accepted_values:
               values: ['2010-2011 Regular Season', '2011 Playoffs', '2011-2012 Regular Season', '2012 Playoffs', '2012-2013 Regular Season', '2013 Playoffs', '2013-2014 Regular Season', '2014 Playoffs', '2014-2015 Regular Season', '2015 Playoffs']
+      - name: season
+        description: "Year the season ended. Used to help join reg season and playoff data together"
+        tests:
+          - accepted_values:
+              values: [2011, 2012, 2013, 2014, 2015]
       - name: game_date
         description: "Day of game in YYYY-MM-DD format"
       - name: player_full_name
@@ -108,3 +113,13 @@ models:
     description: "All raw playoff data"
   - name: raw_stg_regseason_data
     description: "All raw regular season data"
+  - name: raw_2010_2011_data
+    description: "Staging file for all 2010-2011 + 2011 playoff raw data, with season (2011) included"
+  - name: raw_2011_2012_data
+    description: "Staging file for all 2011-2012 + 2012 playoff raw data, with season (2012) included"
+  - name: raw_2012_2013_data
+    description: "Staging file for all 2012-2013 + 2013 playoff raw data, with season (2013) included"
+  - name: raw_2013_2014_data
+    description: "Staging file for all 2013-2014 + 2014 playoff raw data, with season (2014) included"
+  - name: raw_2014_2015_data
+    description: "Staging file for all 2014-2015 + 2015 playoff raw data, with season (2015) included"

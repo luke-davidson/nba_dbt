@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: avgs_playoffs
+    description: "Averages of all player's playoff data grouped by player and year"
+  - name: avgs_regseason
+    description: "Averages of all player's regular season data grouped by player and year"
+  - name: avgs_final
+    description: "Reg season and playoff data joined together via season"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - player
+            - season

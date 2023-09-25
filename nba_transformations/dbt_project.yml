@@ -37,8 +37,8 @@ models:
       +materialized: view
     averages:
       +materialized: view
-    point_streaks:
-      +materialized: view
+    # point_streaks:
+    #   +materialized: view
 seeds:
   nba_transformations:
     +schema: seeds

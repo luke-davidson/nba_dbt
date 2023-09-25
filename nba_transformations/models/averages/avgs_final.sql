@@ -1,8 +1,8 @@
 with regseason_avgs as (
-    select * from {{ ref('avgs_regseason_byplayer') }}
+    select * from {{ ref('avgs_regseason') }}
 ),
 playoff_avgs as (
-    select * from {{ ref('avgs_playoffs_byplayer') }}
+    select * from {{ ref('avgs_playoffs') }}
 ),
 final as (
     select
