@@ -1,5 +1,5 @@
 select 
-    data_set,
+    season,
     player_full_name as player,
     avg(pts) as avg_pts_ploff,
     avg(mins) as avg_mins_ploff,
@@ -18,5 +18,5 @@ select
     avg(t_o) as avg_to_ploff,
     avg(bl) as avg_bl_ploff
 from {{ ref('raw_stg_playoff_data') }}
-group by player_full_name, data_set
+group by player_full_name, season
 order by avg_pts_ploff desc

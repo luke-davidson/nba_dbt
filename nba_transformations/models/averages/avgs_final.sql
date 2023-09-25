@@ -24,7 +24,9 @@ final as (
         p.avg_to_ploff,
         p.avg_bl_ploff
     from regseason_avgs as r
-    full join playoff_avgs as p using(player)
-    order by player, data_set
+    full join playoff_avgs as p
+    on (r.player = p.player) and (r.season = p.season)
+    order by avg_pts_reg desc, avg_pts_ploff desc
 )
 select * from final
+where player is not null

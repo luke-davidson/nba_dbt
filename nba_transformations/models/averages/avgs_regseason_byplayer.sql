@@ -1,5 +1,5 @@
 select 
-    data_set,
+    season,
     player_full_name as player,
     avg(pts) as avg_pts_reg,
     avg(mins) as avg_mins_reg,
@@ -18,5 +18,5 @@ select
     avg(t_o) as avg_to_reg,
     avg(bl) as avg_bl_reg
 from {{ ref('raw_stg_regseason_data') }}
-group by player_full_name, data_set
+group by player_full_name, season
 order by avg_pts_reg desc
