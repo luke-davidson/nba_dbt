@@ -35,10 +35,16 @@ models:
     # Config indicated by + and applies to all files under models/example/
     raw:
       +materialized: view
+      raw_stg_playoff_data:
+        +materialized: table
+      raw_stg_regseason_data:
+        +materialized: table
+      raw_stg_union_all_data:
+        +materialized: table
     averages:
+      +materialized: table
+    point_streaks:
       +materialized: view
-    # point_streaks:
-    #   +materialized: view
 seeds:
   nba_transformations:
     +schema: seeds
