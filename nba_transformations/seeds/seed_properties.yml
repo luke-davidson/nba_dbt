@@ -21,3 +21,8 @@ seeds:
         description: "City of franchise"
       - name: abbrev
         description: "Three letter abbreviation of the city"
+  - name: seed_nba_champions
+    description: "Holding the city name of the team that won the championship in 2011-2015"
+    columns:
+      - name: year
+      - name: champion
