@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: bb_stg_did_bron_play
+    description: "View holding the dates that LeBron actually played in a game"
+    columns:
+      - name: game_date
+        description: "Date of the game"
+      - name: player_full_name
+        description: "Should be LeBron James"
+        tests:
+          - accepted_values:
+              values: ['LeBron James']
+      - name: player_team
+        description: "Team he was currently playing for (Miami or Cleveland)"
+  - name: bb_stg_players_vs_bron_at_home
+    description: "View holding event data (player, team, date, etc.) and each player's point stats including points scored that night and their season average"
+  - name: bb_final
+    description: "Final calculation of percentage of times they scored about their average against LeBron at his home court"
