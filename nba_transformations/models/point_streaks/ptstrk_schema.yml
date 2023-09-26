@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: ptstrk_stg_consec_5_games
+    description: "Staging table used to list up to 5 consecutive games dates and points scored by player and season"
+  - name: ptstrk_final
+    description: "Adds together the five games, ranks them, counts number of games, orders by highest total over max 5 games from stg"
