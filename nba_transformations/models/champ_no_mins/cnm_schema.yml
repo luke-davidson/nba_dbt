@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: cnm_stg_champ_players
+    description: "Players who won a ring for each team each year"
+  - name: cnm_final
+    description: "Players who won a ring and averaged less than 5 mins per game"
